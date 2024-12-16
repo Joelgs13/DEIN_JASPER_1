@@ -38,8 +38,15 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
 
+        <!-- JasperReports dependency -->
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>6.18.1</version>
+        </dependency>
+
+    </dependencies>
     <build>
         <plugins>
             <plugin>
