@@ -16,12 +16,29 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Clase principal que lanza la aplicación de informes de JavaFX y genera un informe a partir de datos de una base de datos.
+ * Extiende de {@link javafx.application.Application} para crear y mostrar la interfaz gráfica de usuario.
+ */
 public class LanzaInforme extends Application {
 
+    /**
+     * Metodo principal de ejecución de la aplicación. Llama al metodo {@link #start(Stage)}
+     * para inicializar y mostrar el informe basado en JasperReports.
+     *
+     * @param args Argumentos de línea de comandos.
+     */
     public static void main(String[] args) {
-        launch(args); // This will start the JavaFX application
+        launch(args); // Inicia la aplicación JavaFX
     }
 
+    /**
+     * Metodo encargado de la lógica principal para generar y mostrar el informe.
+     * Este metodo establece la conexión a la base de datos, carga el informe JasperReport,
+     * rellena el informe con datos de la base de datos y finalmente lo muestra usando un visor de informes.
+     *
+     * @param primaryStage El escenario principal de la aplicación.
+     */
     @Override
     public void start(Stage primaryStage) {
         ConexionBBDD bbdd;
@@ -56,6 +73,12 @@ public class LanzaInforme extends Application {
         }
     }
 
+    /**
+     * Muestra una ventana emergente con un mensaje de error.
+     *
+     * @param titulo El título de la ventana emergente de error.
+     * @param mensaje El mensaje que se mostrará en la ventana emergente.
+     */
     private void mostrarError(String titulo, String mensaje) {
         // Crear una ventana emergente de tipo "error"
         Alert alert = new Alert(AlertType.ERROR);
